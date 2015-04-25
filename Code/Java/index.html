@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<title>Code - Java</title>
+		<link rel="shortcut icon" href="../../Resources/Images/Grundink-Main.png"/>
+		<link rel="stylesheet" type="text/css" href="../../Resources/main.css"/>
+		<script src="../../Resources/main.js"></script>
+		<META http-equiv="Content-Type" content="type/html; charset=UTF-8">
+	</head>
+	<body onload="javascriptContentDoneLoading()" onresize="javascriptContentDoneLoading()">
+		<div id="navbarHolder">
+			<ul id="navbar">
+				<li><a href="../../index.html" id="other">Home</a></li>
+				<li><a href="../../Downloads/index.html" id="other">Downloads</a></li>
+				<li><a href="../index.html" id="current">Code</a></li>
+				<li><a href="../../Contact/index.html" id="other">Contact</a></li>
+			</ul>
+			<img src="../../Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar()"/>
+			<ul id="hiddenNavbar">
+				<li><a href="../index.html" id="otherMobile">Home</a></li>
+				<li><a href="../Downloads/index.html" id="otherMobile">Downloads</a></li>
+				<li><a href="../index.html" id="currentMobile">Code</a></li>
+				<li><a href="../Contact/index.html" id="otherMobile">Contact</a></li>
+			</ul>
+		</div>
+		<div id="header">
+			<p>Java Code</p>
+		</div>
+		<noscript>
+			Well, this is awkward. Your browser either doesn't have JavaScript enabled or doesn't support it. This page is no fun without it.
+			<br>
+			<img src="../../Resources/Images/No-JavaScript.png"/><br>
+			But seriously, enable Javascript. Life is better that way.
+		</noscript>
+		<div id="mainContent" style="visibility: hidden">
+			<p>This is the place for one to find all sorts of Java code, tutorials, and secrets.</p>
+			<p>This code is meant for learning and is available for anyone to use.</p>
+			<p>Click on the spoiler to view the code for a specific segment. Good day!</p>
+			<hr>
+			<div style="text-align: center">
+				<button onclick="spoil(event, 'java1')">Java Tutorial 1</button>
+				<div>
+					<p name="java1" style="visibility: hidden; position: absolute; text-align: left; margin: 0">
+						Hello, and welcome to programming in Java!<br>
+						This is the first of many tutorials for programming in Java and is mostly a "let's get things going" tutorial.<br>
+						First of all, you are going to need to download the Java Runtime Environment (JRE) and the Java Development Kit (JDK).<br>
+						Secondly, you will need a program with which you can program in Java. I use Eclipse, but Oracle provides NetBeans.<br>
+						Once you have installed those programs, you are ready to make some Java!<br>
+						Now, let's get to a simple program to teach you the basic set-up of a Java program.<br>
+						You're going to need to create a new Java project, and then you need to create a new Java class.<br>
+						Call the class whatever you want. I am using ClassNameHere.<br>
+						Because this is your first program, it is tradition to make it print "Hello, world!" to the console.<br>
+						The code below does just that with the "System.out.println("Thing to print");" method.<br>
+						Fill the class with the following code:<br>
+						<code>
+							//This is called a comment. Keep notes with them!<br>
+							/*<br>
+							*This is a comment, too. It allows for multiple lines.<br>
+							*/<br>
+							public class ClassNameHere { //This is called a class. It's the main part of a program.<br>
+							&nbsp;&nbsp;public static void main(String[] args) { //This is the main method. It is needed for all programs in at least one class. A "main" class.<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//Insert the "meat" of the program here. Because it's your first program, we'll do something simple.<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello, world!"); //This is your first command. It calls a method called "println" from the "System" class.<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//This tells the computer to print whatever is inside the parentheses into the console. In our case, it will print "Hello, world!".<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//Remember, it will not physically print the quotation marks. Those are used to tell the computer you are defining a String (of characters), like a sentence.<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;//We'll get into types of variables later. For now, you have your first Java program!<br>
+							&nbsp;&nbsp;}<br>
+							}
+						</code>
+					</p>
+				</div>
+				<hr>
+				<div>
+					<button onclick="spoil(event, 'grundinkMod1')">Grundink Mod Tutorial 1</button>
+					<p name="grundinkMod1" style="visibility: hidden; position: absolute; text-align: left; margin: 0">
+						**This tutorial assumes you have followed the first Java Tutorial**<br><br>
+						As you may know, I am creating a game called "Grundink." It has mod support, but that's worthless without knowing how to make mods, isn't it?<br>
+						To make mods, you need to be able to code in Java (see the Java Tutorial 1 to set up a way to code in Java) and understand some basic Java syntax.<br>
+						Now that you are able to code in Java, you will need to download Grundink. Follow <a href="../../Downloads/index.html">this link</a> and download it.<br>
+						So you've got Grundink. Now what?<br>
+						Now, you need to extract the game file itself. Unzip the Grundink Launcher you just downloaded any way you want (7zip, WinRAR, etc.) and navigate to classes.zip.<br>
+						Open classes.zip and then extract Grundink.jar to a dedicated area for programming mods. Remember where you put it. It will come back soon.<br>
+						Now, open up you Java IDE (Eclipse, NetBeans, etc.) and create a new Java project.<br>
+						Create you main package and a new class. Now, (for Eclipse) right click on your project, select "Properties", and "Java Build Path".<br>
+						Choose the "Libraries" tab, and choose "Add External JARS". Navigate to wherever you put the extracted Grundink.jar file and select it.<br>
+						Congratulations, the hard part is over! You can now make mods for Grundink!<br><br>
+						Grundink operates on a "need to know basis" so to speak. You mod will only be called upon when Grundink or your mod requests it.<br>
+						These requests are made through Events and these are the backbone to Grundink.<br>
+						For your first mod, we'll do something simple. It will be a mod that prints to Grundink's log, "Hello, world!" as soon as it is loaded.<br>
+						<code>
+							package [mod.package.here];<br>
+							import grundink.src.Grundink;<br>
+							import grundink.src.Mod;<br>
+							public class [ModName] extends Mod {<br>
+							&nbsp;@Override<br>
+							&nbsp;public void onInitialize() {<br>
+							&nbsp;&nbsp;Grundink.log("Hello, world!");<br>
+							&nbsp;}<br>
+							}<br><br>
+						</code>
+						Now that you've coded the mod, you need to set it up for use with Grundink.<br>
+						Run the Grundink Launcher you first downloaded and play the game. Exit the game whenever you'd like.<br>
+						Doing that built all of the files Grundink needs and allows you to continue making your mod.<br>
+						Navigate to your home directory (go to C:\Users\[User] on Windows, /home/[user]/ on Linux, etc.)<br>
+						Open the folder called ".grundink" (you may have to show hidden files) and the folder "mods" inside of that.<br>
+						Now, create a folder for your mod. Call it whatever. Create a new folder called "classes".<br>
+						Then, create a file inside the folder above "classes" called "main_class.info" (/.grundink/mods/[theFolderYouMade]/main_class.info)<br>
+						Lay the file out like so:<br>
+						<code>
+							name:[mod_name]<br>
+							main-class:<br>
+							author:[author]<br>
+							version:[mod_version]<br><br>
+						</code>
+						We'll come back to that file later; don't do anything with it.<br>
+						Now, go back to your Java IDE and build the mod. Export it as a ".class" file to the "classes" folder.<br>
+						If you gave your mod a package, put the class file inside folders that correspond to the package, ie. for a package "mod.src", the class would be in "/.grundink/mods/[theFolderYouMade]/classes/mod/src/Main.class"<br>
+						Once the class is where it should be, go back to the "main_class.info" file and where it says "main-class:", put the path from the "main_class.info" file to the mod's main class.<br>
+						Continuing with the above "mod.src" package example, the "main-class:" should have "mod.src.Main" (excluding quotation marks) after it.
+						Now, if you did everything correctly, when you run Grundink, the mod will initialize and "Hello, world!" will be logged to "/.grundink/log.txt".<br>
+						Here is the final main_class.info example file:<br>
+						<code>
+							name: My_First_Mod<br>
+							main-class: mod.src.Main<br>
+							author: redusk<br>
+							version: 1.0<br><br>
+						</code>
+						Remember to replace the values with the values that are correct for YOUR mod, especially the "main-class" path.<br>
+						Also, remember that the "main-class" path uses periods (.) to separate folders and excludes the file type (.class) from the end.
+					</p>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</body>
+</html>

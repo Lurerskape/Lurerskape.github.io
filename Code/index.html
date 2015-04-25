@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>Code</title>
+		<link rel="shortcut icon" href="../Resources/Images/Grundink-Main.png"/>
+		<link rel="stylesheet" type="text/css" href="../Resources/main.css"/>
+		<script src="../Resources/main.js"></script>
+		<META http-equiv="Content-Type" content="type/html; charset=UTF-8">
+	</head>
+	<body onload="javascriptContentDoneLoading()" onresize="javascriptContentDoneLoading()">
+		<div id="navbarHolder">
+			<ul id="navbar">
+				<li><a href="../index.html" id="other">Home</a></li>
+				<li><a href="../Downloads/index.html" id="other">Downloads</a></li>
+				<li><a href="" id="current">Code</a></li>
+				<li><a href="../Contact/index.html" id="other">Contact</a></li>
+			</ul>
+			<img src="../Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar()"/>
+			<ul id="hiddenNavbar">
+				<li><a href="../index.html" id="otherMobile">Home</a></li>
+				<li><a href="../Downloads/index.html" id="otherMobile">Downloads</a></li>
+				<li><a href="" id="currentMobile">Code</a></li>
+				<li><a href="../Contact/index.html" id="otherMobile">Contact</a></li>
+			</ul>
+		</div>
+		<div id="header">
+			<p>.takeMyCode();</p>
+		</div>
+		<noscript>
+			Well, this is awkward. Your browser either doesn't have JavaScript enabled or doesn't support it. This page is no fun without it.
+			<br>
+			<img src="../Resources/Images/No-JavaScript.png"/>
+		</noscript>
+		<div id="mainContent" style="visibility: hidden">
+			<p>How're you doing, folks? Hopefully you said, "Well," or something along those lines! (I'm sorry if you didn't. Here's a hug. *hug*)</p>
+			<p>Here is where you can find some of the code I've so graciously permitted you to take. Use it responsibly. We're mature here.</p>
+			<p>Click on the spoiler to view the code for a specific segment or click on 'Jump to Java Code Page' to view all things Java. Good day!</p>
+			<div style="text-align: center">
+				<button onclick="navigateTo('Java/index.html')">Jump to Java Code Page</button><br><hr>
+				<button onclick="spoil(event, 'galileo1')">Intel Galileo Web Server Code</button>
+				<div style="text-align: left; width: 500; margin-left: auto; margin-right: auto">
+					<code name="galileo1" style="visibility: hidden; position: absolute">
+						<br>
+						void setup() {<br>
+						  &nbsp;&nbsp;pinMode(13, OUTPUT);<br>
+						  &nbsp;&nbsp;digitalWrite(13, HIGH);<br>
+						  &nbsp;&nbsp;system("telnetd -l /bin/sh");<br>
+						  &nbsp;&nbsp;digitalWrite(13, LOW);<br>
+						  &nbsp;&nbsp;delay(250);<br>
+						  &nbsp;&nbsp;digitalWrite(13, HIGH);<br>
+						  &nbsp;&nbsp;system("ifconfig eth0 169.254.1.1 netmask 255.255.0.0 up");<br>
+						  &nbsp;&nbsp;digitalWrite(13, LOW);<br>
+						  &nbsp;&nbsp;delay(250);<br>
+						  &nbsp;&nbsp;digitalWrite(13, HIGH);<br>
+						  &nbsp;&nbsp;system("ifconfig wlan0 up");<br>
+						  &nbsp;&nbsp;digitalWrite(13, LOW);<br>
+						  &nbsp;&nbsp;delay(250);<br>
+						  &nbsp;&nbsp;digitalWrite(13, HIGH);<br>
+						  &nbsp;&nbsp;system("ifup wlan0");<br>
+						  &nbsp;&nbsp;digitalWrite(13, LOW);<br>
+						  &nbsp;&nbsp;delay(250);<br>
+						  &nbsp;&nbsp;digitalWrite(13, HIGH);<br>
+						  &nbsp;&nbsp;system("cd [DIRECTORY/TO/WEB/SERVER] ; node [SERVER_FILE.js]");<br>
+						  &nbsp;&nbsp;digitalWrite(13, LOW);<br>
+						  &nbsp;&nbsp;delay(250);<br>
+						}<br>
+						void loop() {<br>
+						  &nbsp;&nbsp;digitalWrite(13, HIGH);<br>
+						  &nbsp;&nbsp;delay(1000); <br>
+						  &nbsp;&nbsp;digitalWrite(13, LOW);<br>
+						  &nbsp;&nbsp;delay(1000);<br>
+						}
+					</code>
+				</div>
+				<hr>
+				<button onclick="spoil(event, 'rgbConv')">RGB <-> HEX Converter</button>
+				<div name = "rgbConv" style="visibility: hidden; position: absolute">
+					<p>This is a tool you can use to convert colors to and from RGB and HEX.</p>
+					<p>Do NOT use shorthand HEX.</p>
+					<p>Remember to leave the field you are converting TO blank. I.E. RGB -> HEX; HEX is blank.</p>
+					<div id="colorSwab" style="border:solid 2px #C0C0C0;border-radius:5px;margin-left:auto;margin-right:auto;width:250px">
+						RGB:<input id="RGBInput" style="margin: 5px"></input><br>
+						HEX:<input id="HEXInput" style="margin: 5px"></input><br>
+					</div>
+					<button class="okay" style="margin: 5px" onclick="convertColors('RGBInput','HEXInput', 'colorSwab')">Convert</button>
+					<button class="cancel" style="margin: 5px" onclick="clearValue('RGBInput');clearValue('HEXInput');resetBackground('colorSwab','#E9E9E9')">Clear</button>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</body>
+</html>
