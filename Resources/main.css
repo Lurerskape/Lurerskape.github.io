@@ -35,18 +35,28 @@ p {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 80px
+	height: 80px;
+	transition: visibility 0.5s;
 }
 #hiddenNavbar {
 	visibility: hidden;
 	position: absolute;
+	opacity: 0;
 	top: 80;
 	left: 0;
-	width: 100%;
+	width: 0;
+	background: #77AADD;
 	list-style-type: none;
-	text-align: center;
+	text-align: left;
 	margin: 0;
 	padding: 0px;
+	transition: visibility 0.2s, opacity 0.2s, width 0.5s;
+}
+#hiddenNavbar.show {
+	visibility: visible;
+	opacity: 1;
+	width: 50%;
+	box-shadow: 2px 4px 2px -2px #777777, 4px 0 2px -2px #777777;
 }
 #hiddenNavbar a {
 	display: block;

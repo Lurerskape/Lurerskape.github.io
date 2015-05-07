@@ -1,3 +1,4 @@
+var mobileNav = false;
 function getCSS(element, property) {
 	var elem = document.getElementById(element);
 	var css = null;
@@ -10,35 +11,61 @@ function getCSS(element, property) {
 }
 function toggleMiniNavbar() {
 	var show = (getCSS('hiddenNavbar', 'visibility') != 'visible');
-	if(show == true) {
+	showMiniNavbar(show);
+}
+function showMiniNavbar(show) {
+	if(show == true && mobileNav == true) {
 		document.getElementById('mobileNavbar').style.left = '-40';
-		document.getElementById('hiddenNavbar').style.visibility = 'visible';
+		document.getElementById('hiddenNavbar').className = 'show';
 	}
 	else {
 		document.getElementById('mobileNavbar').style.left = '0';
-		document.getElementById('hiddenNavbar').style.visibility = 'hidden';
+		document.getElementById('hiddenNavbar').className = '';
 	}
 }
 function isMiniNavbarShowing() {
 	return (getCSS('hiddenNavbar', 'visibility') == 'visible');
 }
 function javascriptContentDoneLoading() {
+	mobileNav = false;
 	document.getElementById('mainContent').style.visibility = 'visible';
 	var width = document.body.clientWidth;
 	var mobile = (width < 1000) || (navigator.userAgent.indexOf('BB10') != -1) || (navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('Android') != -1);
+	if(document.getElementById('navbarHolder') == null) {
+		var page = window.location.href;
+		var navbar = '';
+		if(page.indexOf('/Downloads/') > -1) {
+			navbar = ('<div id="navbarHolder" onmousedown="return false"><ul id="navbar"><li><a href="../index.html" id="other">Home</a></li><li><a href="" id="current">Downloads</a></li><li><a href="../Code/index.html" id="other">Code</a></li><li><a href="../Contact/index.html" id="other">Contact</a></li></ul><img src="../Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar();event.stopPropagation()"/><ul id="hiddenNavbar"><li><a href="../index.html" id="otherMobile">Home</a></li><li><a href="" id="currentMobile">Downloads</a></li><li><a href="../Code/index.html" id="otherMobile">Code</a></li><li><a href="../Contact/index.html" id="otherMobile">Contact</a></li></ul></div>');
+		}else if(page.indexOf('/Code/Java/') > -1) {
+			navbar = ('<div id="navbarHolder" onmousedown="return false"><ul id="navbar"><li><a href="../../index.html" id="other">Home</a></li><li><a href="../../Downloads/index.html" id="other">Downloads</a></li><li><a href="../index.html" id="current">Code</a></li><li><a href="../../Contact/index.html" id="other">Contact</a></li></ul><img src="../../Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar();event.stopPropagation()"/><ul id="hiddenNavbar"><li><a href="../../index.html" id="otherMobile">Home</a></li><li><a href="../../Downloads/index.html" id="otherMobile">Downloads</a></li><li><a href="../index.html" id="currentMobile">Code</a></li><li><a href="../../Contact/index.html" id="otherMobile">Contact</a></li></ul></div>');
+		}else if(page.indexOf('/Code/') > -1) {
+			navbar = ('<div id="navbarHolder" onmousedown="return false"><ul id="navbar"><li><a href="../index.html" id="other">Home</a></li><li><a href="../Downloads/index.html" id="other">Downloads</a></li><li><a href="" id="current">Code</a></li><li><a href="../Contact/index.html" id="other">Contact</a></li></ul><img src="../Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar();event.stopPropagation()"/><ul id="hiddenNavbar"><li><a href="../index.html" id="otherMobile">Home</a></li><li><a href="../Downloads/index.html" id="otherMobile">Downloads</a></li><li><a href="" id="currentMobile">Code</a></li><li><a href="../Contact/index.html" id="otherMobile">Contact</a></li></ul></div>');
+		}else if(page.indexOf('/Contact/') > -1) {
+			navbar = ('<div id="navbarHolder" onmousedown="return false"><ul id="navbar"><li><a href="../index.html" id="other">Home</a></li><li><a href="../Downloads/index.html" id="other">Downloads</a></li><li><a href="../Code/index.html" id="other">Code</a></li><li><a href="" id="current">Contact</a></li></ul><img src="../Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar();event.stopPropagation()"/><ul id="hiddenNavbar"><li><a href="../index.html" id="otherMobile">Home</a></li><li><a href="../Downloads/index.html" id="otherMobile">Downloads</a></li><li><a href="../Code/index.html" id="otherMobile">Code</a></li><li><a href="" id="currentMobile">Contact</a></li></ul></div>');
+		}else {
+			navbar = ('<div id="navbarHolder" onmousedown="return false"><ul id="navbar"><li><a href="" id="current">Home</a></li><li><a href="/Downloads/index.html" id="other">Downloads</a></li><li><a href="/Code/index.html" id="other">Code</a></li><li><a href="/Contact/index.html" id="other">Contact</a></li></ul><img src="Resources/Images/Hamburger.png" id="mobileNavbar" onclick="toggleMiniNavbar();event.stopPropagation()"/><ul id="hiddenNavbar"><li><a href="" id="currentMobile">Home</a></li><li><a href="../Downloads/index.html" id="otherMobile">Downloads</a></li><li><a href="../Code/index.html" id="otherMobile">Code</a></li><li><a href="../Contact/index.html" id="otherMobile">Contact</a></li></ul></div>');
+		}
+		var navTemp = document.createElement('div');
+		navTemp.innerHTML = navbar;
+		var docFrag = document.createDocumentFragment();
+		while(navTemp.firstChild) {
+			docFrag.appendChild(navTemp.firstChild);
+		}
+		document.body.insertBefore(docFrag, document.body.childNodes[0]);
+	}
 	if(mobile) {
+		document.body.setAttribute('onclick','showMiniNavbar(false)');
 		document.getElementById('navbar').style.visibility = 'hidden';
 		document.getElementById('navbarHolder').style.height = '80';
 		document.getElementById('header').style.paddingTop = '80';
 		document.getElementById('mobileNavbar').style.visibility = 'visible';
+		mobileNav = true;
 	}else {
+		showMiniNavbar(false);
+		document.getElementById('mobileNavbar').style.visibility = 'hidden';
 		document.getElementById('navbar').style.visibility = 'visible';
 		document.getElementById('navbarHolder').style.height = '50';
 		document.getElementById('header').style.paddingTop = '50';
-		document.getElementById('mobileNavbar').style.visibility = 'hidden';
-		if(isMiniNavbarShowing()) {
-			toggleMiniNavbar();		
-		}
 	}
 }
 function resetColor(elementId, hexColor) {
