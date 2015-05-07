@@ -41,7 +41,6 @@ p {
 #hiddenNavbar {
 	visibility: hidden;
 	position: absolute;
-	opacity: 0;
 	top: 80;
 	left: 0;
 	width: 0;
@@ -50,11 +49,10 @@ p {
 	text-align: left;
 	margin: 0;
 	padding: 0px;
-	transition: visibility 0.2s, opacity 0.2s, width 0.5s;
+	transition: visibility 0.15s, width 0.5s;
 }
 #hiddenNavbar.show {
 	visibility: visible;
-	opacity: 1;
 	width: 50%;
 	box-shadow: 2px 4px 2px -2px #777777, 4px 0 2px -2px #777777;
 }
