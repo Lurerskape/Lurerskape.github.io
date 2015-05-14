@@ -35,25 +35,24 @@ p {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 80px;
+	height: 70px;
 	transition: visibility 0.5s;
 }
 #hiddenNavbar {
 	visibility: hidden;
 	position: absolute;
-	top: 80;
+	top: 70;
 	left: 0;
-	width: 0;
+	width: 100%;
 	background: #77AADD;
 	list-style-type: none;
-	text-align: left;
+	text-align: center;
 	margin: 0;
 	padding: 0px;
 }
 #hiddenNavbar.show {
 	visibility: visible;
-	width: 50%;
-	box-shadow: 2px 4px 2px -2px #777777, 4px 0 2px -2px #777777;
+	box-shadow: 2px 4px 2px -2px #777777;
 }
 #hiddenNavbar a {
 	display: block;
@@ -101,7 +100,7 @@ code {
 	background: #FFFFCF;
 }
 #currentMobile {
-	font-size: 60px;
+	font-size: 40px;
 	background: #77AADD;
 	text-decoration: none;
 	color: #E9E9E9;
@@ -114,7 +113,7 @@ code {
 	background: #5588BB
 }
 #otherMobile {
-	font-size: 60px;
+	font-size: 40px;
 	text-decoration: none;
 	color: #5588BB;
 	background: #77AADD;

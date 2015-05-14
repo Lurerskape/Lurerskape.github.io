@@ -56,8 +56,8 @@ function javascriptContentDoneLoading() {
 	if(mobile) {
 		document.body.setAttribute('onclick','showMiniNavbar(false)');
 		document.getElementById('navbar').style.visibility = 'hidden';
-		document.getElementById('navbarHolder').style.height = '80';
-		document.getElementById('header').style.paddingTop = '80';
+		document.getElementById('navbarHolder').style.height = '70';
+		document.getElementById('header').style.paddingTop = '70';
 		document.getElementById('mobileNavbar').style.visibility = 'visible';
 		mobileNav = true;
 	}else {
