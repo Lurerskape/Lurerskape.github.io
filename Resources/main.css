@@ -145,6 +145,7 @@ code {
 	text-decoration: none;
 	background: #77AADD;
 	color: #E9E9E9;
+	border-bottom: 0px solid #000000;
 	transition: background 0.5s, color 0.5s;
 }
 #current:hover {
