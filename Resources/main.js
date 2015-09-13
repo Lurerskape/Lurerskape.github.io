@@ -15,12 +15,15 @@ function toggleMiniNavbar() {
 }
 function showMiniNavbar(show) {
 	if(show == true && mobileNav == true) {
-		document.getElementById('mobileNavbar').style.left = '-40';
+		//document.getElementById('mobileNavbar').style.left = '-40';
+		document.getElementById('mobileNavbar').className = 'show';
 		document.getElementById('hiddenNavbar').className = 'show';
+		document.getElementById('navbarHolder').className = 'show';
 	}
 	else {
-		document.getElementById('mobileNavbar').style.left = '0';
+		document.getElementById('mobileNavbar').className = '';
 		document.getElementById('hiddenNavbar').className = '';
+		document.getElementById('navbarHolder').className = '';
 	}
 }
 function isMiniNavbarShowing() {

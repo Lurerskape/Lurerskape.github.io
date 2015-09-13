@@ -36,7 +36,10 @@ p {
 	top: 0;
 	left: 0;
 	height: 70px;
-	transition: visibility 0.5s;
+	transition: visibility 0.5s, left 0.5s;
+}
+#mobileNavbar.show {
+	left: -40;
 }
 #hiddenNavbar {
 	visibility: hidden;
@@ -48,6 +51,7 @@ p {
 	list-style-type: none;
 	text-align: center;
 	margin: 0;
+	transition: height 0.5s;
 	padding: 0px;
 }
 #hiddenNavbar.show {
@@ -84,6 +88,15 @@ body {
 #download p {
 	pointer-events: none;
 }
+#downloadLink img {
+	padding-left: 1px;
+}
+#downloadLink:hover img {
+	filter: brightness(120%);
+}
+#downloadLink p {
+	padding-left: 10px;
+}
 #downloadLink {
 	max-height: 130px;
 	background: #E9E9E9;
@@ -96,6 +109,9 @@ body {
 	transform: translate(32px, 0px);
 	background: #8888FF;
 	cursor: hand;
+}
+#downloadLink.extended {
+	height=150px;
 }
 code {
 	background: #FFFFCF;
@@ -130,6 +146,13 @@ code {
 	list-style-type: none;
 	z-index: 2;
 	box-shadow: 0px 1px 4px #444444;
+	opacity: 0.8;
+	transition: opacity 0.5s, transform 0.5s;
+	transform: translateY(-30%);
+}
+#navbarHolder:hover {
+	opacity: 1;
+	transform: translateY(0);
 }
 #navbar {
 	width: 1000px;
@@ -248,9 +271,13 @@ button.cancel:active{
 	border-radius: 50px;
 	background: #77AADD;
 	box-shadow: 0px 2px 6px #444444;
-	transition: background 0.5s, border 0.5s;
+	transition: background 0.5s, border 0.5s, box-shadow 0.5s;
 }
 #floatingButton:hover {
 	border: 2px solid #99CCFF;
 	background: #99CCFF;
+	box-shadow: 0px 3px 7px #444444;
+}
+#floatingButton:active {
+	box-shadow: 0px 4px 8px #444444;
 }
