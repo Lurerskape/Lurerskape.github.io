@@ -30,7 +30,7 @@ function isMiniNavbarShowing() {
 	return (getCSS('hiddenNavbar', 'visibility') == 'visible');
 }
 function createDialog(contentId, title) {
-	dialog = ('<div id="popUp"><div id="dialog"><button class="cancel" onclick="closeDialog()" style="float: left;">Close</button><p style="color: #8888FF; font-family: Sans-Serif; font-size: 28px;">' + title + '</p>' + document.getElementById(contentId).innerHTML + '</div></div>')
+	dialog = ('<div id="popUp" style="height:' + document.documentElement.clientHeight + '"><div id="dialog"><button class="cancel" onclick="closeDialog()" style="float: left;">Close</button><p style="color: #8888FF; font-family: Sans-Serif; font-size: 28px;">' + title + '</p>' + document.getElementById(contentId).innerHTML + '</div></div>')
 	var dialogTemp = document.createElement('div');
 	dialogTemp.innerHTML = dialog;
 	var docFrag = document.createDocumentFragment();
