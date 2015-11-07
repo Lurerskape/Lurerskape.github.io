@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>Downloads</title>
+		<meta name="viewport" content="width=device-width, initial-scal=1.0"/>
+		<meta name="theme-color" content="#77AADD">
+		<link rel="shortcut icon" href="../Resources/Images/Grundink-Main.png"/>
+		<link rel="stylesheet" type="text/css" href="../Resources/main.css"/>
+		<script src="../Resources/main.js"></script>
+		<META http-equiv="Content-Type" content="type/html; charset=UTF-8">
+	</head>
+	<body onload="javascriptContentDoneLoading()" onresize="javascriptContentDoneLoading()">
+		<div id="header">
+			<p>Download ALL THE STUFFS</p>
+		</div>
+		<noscript>
+			Well, this is awkward. Your browser either doesn't have JavaScript enabled or doesn't support it. This page is no fun without it.
+			<br>
+			<img src="../Resources/Images/No-JavaScript.png"/><br>
+			*sigh* I guess I can provide download links anyway...<br>
+			But seriously, enable Javascript. Life is better that way.<br>
+			<ul>
+				<li><a href="../Resources/Grundink.jar">Grundink</a><br></li>
+				<li><a href="../Resources/ChemHelp.apk">Chemistry Helper</a><br></li>
+				<li><a href="../Resources/LightBro.apk">LightBro</a><br></li>
+				<li><a href="../Resources/Kelvin.jar">Celsius to Kelvin Converter</a><br></li>
+				<li><a href="../Resources/TurtleBrowser2.0.exe">TurtleBrowser 2.0</a></li>
+				<li><a href="../Resources/Wireless-Print-Server.jar">Wireless Print Server</a></li>
+				<li><a href="../Resources/Wireless-Print-Client.jar">Wireless Print Client</a></li>
+			<ul>
+		</noscript>
+		<div id="mainContent" style="visibility: hidden; background: #6666FF;">
+			<p style="color:C0C0C0;width:100%;background:#E9E9E9;margin:0">Left click a program to download it.</p>
+			<p style="color:C0C0C0;width:100%;background:#E9E9E9;margin:0">Right click a program to see its description.</p>
+			<img id="downloadSprite" src="../Resources/Images/Download.png" style="position: absolute; max-width: 32px; visibility: hidden"/>
+			<div id="downloadLink" onclick="navigateTo('../Resources/Grundink.jar')"  onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('grundink_desc', '0')" oncontextmenu="showDesc('grundink_desc', '1'); return false">
+				<img src="../Resources/Images/Grundink-Main.png" id="download"/>
+				<p id="download">Grundink - Shootin' zombies just got more exciting.</p>
+			</div>
+			<p class="description" id="grundink_desc">Grundink is an arcade-style game designed to bring back the good ol' days. Strategy is key as the zombies grow bigger in number and space to run dwindles. Currently, the game is in an 'alpha' state. Campaign is being re-written.The game requires that Java 1.8 or higher be installed.</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/ChemHelp.apk')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('chemHelp_desc', '0')" oncontextmenu="showDesc('chemHelp_desc', '1'); return false">
+				<img src="../Resources/Images/ChemHelp-Main.png" id="download"/>
+				<p id="download">Chemistry Helper - I can probably help...</p>
+			</div>
+			<p class="description" id="chemHelp_desc">Need help with Chemistry? Look no further than Chemistry Helper!</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/LightBro.apk')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('lightBro_desc', '0')" oncontextmenu="showDesc('lightBro_desc', '1'); return false">
+				<img src="../Resources/Images/LightBro-Main.png" id="download"/>
+				<p id="download">LightBro - SIII owners can now see in the dark.</p>
+			</div>
+			<p class="description" id="lightBro_desc">LightBro is an Android application that puts a nifty flashlight toggle in the notification shade. Now, the flashlight can be accessed from anywhere with ease. LightBro doesn't work on all Android devices. It has been tested on the Galaxy SIII successfully.</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/Kelvin.jar')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('kelvin_desc', '0')" oncontextmenu="showDesc('kelvin_desc', '1'); return false">
+				<img src="../Resources/Images/Kelvin-Main.png" id="download"/>
+				<p id="download">Celsius to Kelvin - Americans are guaranteed to cry when they see this.</p>
+			</div>
+			<p class="description" id="kelvin_desc">The Celsius to Kelvin converter is a Java program that does exactly what you would think. It converts a temperature from degrees Centigrade to Kelvin. This program requires that Java be installed.</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/TurtleBrowser2.0.exe')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('turtleBrowser_desc', '0')" oncontextmenu="showDesc('turtleBrowser_desc', '1'); return false">
+				<img src="../Resources/Images/TurtleBrowser-Main.png" id="download"/>
+				<p id="download">TurtleBrowser - Browse the 'net faster than your average turtle.</p>
+			</div>
+			<p class="description" id="turtleBrowser_desc">TurtleBrowser 2.0 is an application meant for Windows operating systems. It is a web browser using the same engine as Microsoft's Internet Explorer. You can change the theme by clicking on the text-box that says "URL". This program requires a Windows computer (or Wine for Linux).</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/Zombie_Game.jar')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('zombieGame_desc', '0')" oncontextmenu="showDesc('zombieGame_desc', '1'); return false">
+				<img src="../Resources/Images/Zombie_Game-Main.png" id="download"/>
+				<p id="download">Zombie Game - Grundink's great-great-grandpappy.</p>
+			</div>
+			<p class="description" id="zombieGame_desc">Zombie Game is the very first release of "Grundink." It is Grundink's pre-alpha release. It is very limited in what it can do and requires a horizontal resolution of at least 800 pixels. Zombie Game requires that Java be installed.</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/Wireless-Print-Server.jar')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('printServer_desc', '0')" oncontextmenu="showDesc('printServer_desc', '1'); return false">
+				<p id="download">Wireless Print Server - Part one of making wired wireless.</p>
+			</div>
+			<p class="description" id="printServer_desc">The Wireless Print Server is a Java application that is meant to be running on a computer that is connected to a WIRED printer. It needs to run at all times you want to print. This program listens for the Wireless Print Client to connect wirelessly from anywhere in your WiFi network and sends the files directly to the WIRED printer. It effectivley turns your WIRED printer wireless. This program requires that Java and Wireless Print Client be installed.</p>
+			<div id="downloadLink" onclick="navigateTo('../Resources/Wireless-Print-Client.jar')" onmouseover="showDownloadSprite(event, '1')" onmouseout="showDownloadSprite(event, '0');showDesc('printClient_desc', '0')" oncontextmenu="showDesc('printClient_desc', '1'); return false">
+				<p id="download">Wireless Print Client - Part two of making wired wireless.</p>
+			</div>
+			<p class="description" id="printClient_desc">The Wireless Print Client is a Java application that is meant to be running on any computer that is connected to the same WiFi network as the computer running the Wireless Print Server. It sends files to the Wireless Print Server, effectively turning your WIRED printer wireless. This program requires that Java and Wireless Print Server be installed.</p>
+			<p style="color:C0C0C0;width:100%;background:#E9E9E9;margin:0">More coming soon!</p>
+		</div>
+	</body>
+</html>

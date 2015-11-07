@@ -29,6 +29,19 @@ function showMiniNavbar(show) {
 function isMiniNavbarShowing() {
 	return (getCSS('hiddenNavbar', 'visibility') == 'visible');
 }
+function createDialog(contentId, title) {
+	dialog = ('<div id="popUp"><div id="dialog"><button class="cancel" onclick="closeDialog()" style="float: left;">Close</button><p style="color: #8888FF; font-family: Sans-Serif; font-size: 28px;">' + title + '</p>' + document.getElementById(contentId).innerHTML + '</div></div>')
+	var dialogTemp = document.createElement('div');
+	dialogTemp.innerHTML = dialog;
+	var docFrag = document.createDocumentFragment();
+	while(dialogTemp.firstChild) {
+		docFrag.appendChild(dialogTemp.firstChild);
+	}
+	document.body.insertBefore(docFrag, document.body.childNodes[0]);
+}
+function closeDialog() {
+	document.getElementById('popUp').remove();
+}
 function javascriptContentDoneLoading() {
 	mobileNav = false;
 	document.getElementById('mainContent').style.visibility = 'visible';
