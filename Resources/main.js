@@ -38,6 +38,7 @@ function createDialog(contentId, title) {
 		docFrag.appendChild(dialogTemp.firstChild);
 	}
 	document.body.insertBefore(docFrag, document.body.childNodes[0]);
+	window.scrollTo(0, document.documentElement.scrollHeight / 5);
 }
 function closeDialog() {
 	document.getElementById('popUp').remove();
